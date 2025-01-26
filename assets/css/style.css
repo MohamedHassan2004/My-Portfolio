@@ -5,6 +5,7 @@
     --accent-color: #ffffff; /* White */
     --text-color: #2d2d30; /* Dark Gray */
     --border-color: #e5e7eb;
+    --contact-img: url('../imgs/contact-us-vector.jpg');
 }
 
 /* Base Styles */
@@ -173,7 +174,7 @@ body {
 }
 
 #col-contact {
-    background: url("./imgs/contact-us-vector.jpg") no-repeat center center;
+    background: var(--contact-img) no-repeat center center;
     background-size: contain;
 }
 
