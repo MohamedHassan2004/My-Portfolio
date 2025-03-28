@@ -33,6 +33,7 @@ nav{
 /* Hero Section */
 .hero-section {
     background: linear-gradient(135deg, #f0f0f0 10%, #f9f9f9 90%);
+    background : linear-gradient(rgb(3, 76, 150),skyblue);
     padding: 4rem 0;
     position: relative;
     overflow: hidden;
@@ -85,7 +86,20 @@ nav{
     border: 4px solid white;
 }
 
+.banner{
+    background-color: rgba(229, 231, 235, 0.9);
+    padding: 3rem 0;
+    margin: auto;
+    border-radius: 2rem;
+}
+
 /* Section Common Styles */
+
+section{
+    scroll-margin-top: 70px;
+}
+
+
 .section-header {
     position: relative;
     padding-left: 1.5rem;
@@ -106,6 +120,7 @@ nav{
 #about, #skills, #projects, #contact {
     background: var(--accent-color);
 }
+
 
 /* About Section */
 .about-content p {
@@ -162,6 +177,10 @@ nav{
 
 .project-card:hover img {
     transform: scale(1.05);
+}
+
+.certificate-btn:hover {
+    color: var(--primary-color);
 }
 
 /* Contact Section */
@@ -258,14 +277,4 @@ nav{
 footer p, 
 footer a {
     color: var(--text-color);
-}
-
-
-.certificate-btn:hover {
-    color: var(--primary-color);
-}
-
-
-section {
-    scroll-margin-top: 70px;
 }
