@@ -38,6 +38,7 @@ nav{
     position: relative;
     overflow: hidden;
     border-bottom: 1px solid var(--border-color);
+    text-align: center;
 }
 
 .hero-title {
