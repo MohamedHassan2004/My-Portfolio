@@ -1,437 +1,637 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mohamed Hassan | .NET FullStack Developer</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css" />
+    <title>Mohamed Hassan | Backend .NET Developer</title>
+    <meta name="description" content="Mohamed Hassan — Backend .NET Developer specializing in scalable APIs, real-time systems, and clean architecture solutions.">
+
+    <!-- CSS (Tailwind compiled + Custom Styles) -->
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 
-<body class="vs-gradient">
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top py-3 border-bottom">
-        <div class="container">	
-            <a class="navbar-brand d-flex align-items-center" href="#">
-                <i class="fas fa-code me-2 "></i>
-                <span class="h5 mb-0">MH</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
+<body class="bg-surface text-gray-200 font-sans antialiased overflow-x-hidden">
 
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#education">Education</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
+    <!-- ═══════════════ NAVBAR ═══════════════ -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500">
+        <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <!-- Logo -->
+            <a href="#" class="group flex items-center gap-2">
+                <div class="w-10 h-10 rounded-lg bg-primary/20 border border-primary/30 flex items-center justify-center group-hover:bg-primary/30 transition-all duration-300">
+                    <span class="text-primary-light font-bold text-lg">MH</span>
+                </div>
+            </a>
+
+            <!-- Desktop Links -->
+            <div class="hidden md:flex items-center gap-8">
+                <a href="#about" class="nav-link text-sm text-gray-400 hover:text-primary-light transition-colors duration-300">About</a>
+                <a href="#skills" class="nav-link text-sm text-gray-400 hover:text-primary-light transition-colors duration-300">Skills</a>
+                <a href="#experience" class="nav-link text-sm text-gray-400 hover:text-primary-light transition-colors duration-300">Experience</a>
+                <a href="#projects" class="nav-link text-sm text-gray-400 hover:text-primary-light transition-colors duration-300">Projects</a>
+                <a href="#education" class="nav-link text-sm text-gray-400 hover:text-primary-light transition-colors duration-300">Education</a>
+                <a href="#contact" class="nav-link text-sm text-gray-400 hover:text-primary-light transition-colors duration-300">Contact</a>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-toggle" class="md:hidden text-gray-400 hover:text-primary-light transition-colors" aria-label="Toggle menu">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
+            <div class="glass-card rounded-xl p-4 flex flex-col gap-3">
+                <a href="#about" class="mobile-link text-sm text-gray-400 hover:text-primary-light py-2 transition-colors">About</a>
+                <a href="#skills" class="mobile-link text-sm text-gray-400 hover:text-primary-light py-2 transition-colors">Skills</a>
+                <a href="#experience" class="mobile-link text-sm text-gray-400 hover:text-primary-light py-2 transition-colors">Experience</a>
+                <a href="#projects" class="mobile-link text-sm text-gray-400 hover:text-primary-light py-2 transition-colors">Projects</a>
+                <a href="#education" class="mobile-link text-sm text-gray-400 hover:text-primary-light py-2 transition-colors">Education</a>
+                <a href="#contact" class="mobile-link text-sm text-gray-400 hover:text-primary-light py-2 transition-colors">Contact</a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section" id="home">
-      <div class="container col-xl-6 col-lg-7 col-sm-11 hero-content">
-        <div class="banner">
-          <!-- Profile Image -->
-          <div class="mb-4 position-relative">
-              <div class="profile-img-wrapper mx-auto">
-                  <img src="assets/imgs/my-photo.jpg" alt="Mohamed Hassan" class="profile-img">
-              </div>
-          </div>
-          
-          <!-- Titles -->
-          <h1 class="hero-title display-4 mb-3">Mohamed Hassan</h1>
-          <h2 class="hero-subtitle mb-4 h3">.NET Fullstack Developer</h2>
-          
-          <!-- Description -->
-          <p class="lead text-muted mb-4 px-lg-5 mx-lg-5">
-              Crafting robust solutions with ASP.NET Core & modern web technologies
-          </p>
-          
-          <!-- CTA Button -->
-          <div class="d-inline-block position-relative">
-              <a href="assets/docs/Mohamed Hassan Resume.pdf" target="_blank" class="download-btn"><i class="fas fa-download me-2"></i>Download Resume</a>
-          </div>
-          
-          <!-- Social Links -->
-          <div class="social-links mt-4 pt-2">
-              <a href="mailto:mohamed.hassan.2004@outlook.com" class="social-link" target="_blank">
-                <i class="fas fa-envelope me-2"></i>
-              </a>
-              <a href="https://github.com/MohamedHassan2004" class="social-link" target="_blank">
-                  <i class="fab fa-github fa-lg"></i>
-              </a>
-              <a href="https://linkedin.com/in/mohamed-hassan-07137827b" class="social-link" target="_blank">
-                  <i class="fab fa-linkedin fa-lg"></i>
-              </a>
-            </div>
-        </div>
-      </div>
-    </section>
+    <!-- ═══════════════ HERO ═══════════════ -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20 pb-16 overflow-hidden">
+        <!-- Background Glow Orbs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-72 h-72 bg-accent/5 rounded-full blur-3xl pointer-events-none"></div>
 
-    <!-- About Me Section -->
-    <section id="about" class="py-5">
-        <div class="container">
-            <h2 class="section-header h3 mb-5">About Me</h2>
-            <div class="about-content">
-                <p>
-                  Hi, I'm Mohamed Hassan – a .NET Full-Stack Developer who bridges the gap between complex technical challenges and client success. 
-                  I don't just write code; I craft tailored solutions that empower businesses to thrive in the digital world.
-                <br><br>
-                With a passion for transforming ideas into high-performance web applications, I specialize in designing secure, scalable architectures that grow with your needs, 
-                I focus on delivering neat, maintainable code that drives measurable results.
-                <br><br>
-                Proficient in the .NET ecosystem (C#, ASP.NET Core, Entity Framework) with hands-on experience in modern frontend frameworks like Angular and React. 
-                I leverage cloud platforms like Azure and AWS to build resilient, cost-effective systems.
-              </p>
+        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
+            <!-- Profile Image -->
+            <div class="mb-8 reveal">
+                <div class="relative inline-block">
+                    <div class="w-44 h-44 md:w-52 md:h-52 rounded-full overflow-hidden border-2 border-primary/40 animate-glow-pulse p-1">
+                        <img src="assets/imgs/my-photo.jpg" alt="Mohamed Hassan" class="w-full h-full object-cover rounded-full">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Name & Title -->
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white mb-3 tracking-tight reveal">
+                Mohamed Hassan
+            </h1>
+            <h2 class="text-xl md:text-2xl font-semibold text-primary-light mb-4 reveal">
+                Backend .NET Developer
+            </h2>
+            <p class="text-gray-400 text-base md:text-lg max-w-xl mx-auto mb-10 leading-relaxed reveal">
+                Building scalable APIs, real-time systems, and clean architecture solutions.
+            </p>
+
+            <!-- CTA Buttons -->
+            <div class="flex flex-wrap items-center justify-center gap-4 reveal">
+                <a href="#projects" class="btn-primary">
+                    <i class="fas fa-rocket mr-2"></i>View Projects
+                </a>
+                <a href="assets/docs/Mohamed_Hassan_.NET_developer_resume.pdf" target="_blank" class="btn-outline">
+                    <i class="fas fa-download mr-2"></i>Download CV
+                </a>
+                <a href="#contact" class="btn-ghost">
+                    <i class="fas fa-envelope mr-2"></i>Contact Me
+                </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="flex justify-center gap-5 mt-10 reveal">
+                <a href="mailto:mohamed.hassan.2004@outlook.com" class="social-icon" aria-label="Email">
+                    <i class="fas fa-envelope text-lg"></i>
+                </a>
+                <a href="https://github.com/MohamedHassan2004" target="_blank" class="social-icon" aria-label="GitHub">
+                    <i class="fab fa-github text-lg"></i>
+                </a>
+                <a href="https://linkedin.com/in/mohamed-hassan2004" target="_blank" class="social-icon" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin text-lg"></i>
+                </a>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="container py-5">
-        <h2 class="section-header h3 mb-5">Services</h2>
-        <div class="row g-4">
-            <!-- Enterprise Application Development -->
-            <div class="col-md-4">
-                <div class="skill-card p-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="fas fa-building fa-2x me-3"></i>
-                        <h4 class="mb-0">Enterprise Solutions</h4>
-                    </div>
-                    <p class="text-muted">Architecting and developing scalable enterprise applications using ASP.NET Core, implementing domain-driven design and microservices architecture for optimal business outcomes.</p>
-                </div>
+    <!-- ═══════════════ ABOUT ═══════════════ -->
+    <section id="about" class="py-24 relative scroll-mt-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex items-center gap-3 mb-10 reveal">
+                <div class="w-1 h-8 bg-primary rounded-full"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">About Me</h2>
             </div>
 
-            <!-- API Architecture -->
-            <div class="col-md-4">
-                <div class="skill-card p-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="fas fa-network-wired fa-2x me-3"></i>
-                        <h4 class="mb-0">API Architecture</h4>
-                    </div>
-                    <p class="text-muted">Designing and implementing secure, scalable RESTful APIs with ASP.NET Core, featuring OAuth2/JWT authentication, rate limiting, and comprehensive documentation.</p>
-                </div>
-            </div>
+            <div class="glass-card rounded-2xl p-8 md:p-10 reveal">
+                <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                    I'm a Computer Science student at <span class="text-primary-light font-medium">Helwan University</span> with a GPA of 3.48 (Excellent), 
+                    passionate about engineering robust backend systems that scale. My focus is on 
+                    <span class="text-primary-light font-medium">ASP.NET Core</span> and the .NET ecosystem — designing clean, 
+                    maintainable architectures that solve real problems.
+                </p>
+                <p class="text-gray-300 text-lg leading-relaxed mb-6">
+                    With <span class="text-primary-light font-medium">300+ DSA problems</span> solved across competitive programming platforms and hands-on 
+                    project experience in building production-grade APIs, I combine strong algorithmic thinking with practical 
+                    software engineering skills.
+                </p>
+                <p class="text-gray-400 text-lg leading-relaxed">
+                    I'm driven by scalable system design, clean architecture principles, and continuous improvement — 
+                    always looking to push the boundaries of what I can build and learn.
+                </p>
 
-            <!-- Cloud & DevOps -->
-            <div class="col-md-4">
-                <div class="skill-card p-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="fas fa-cloud fa-2x me-3"></i>
-                        <h4 class="mb-0">Cloud & DevOps</h4>
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-10">
+                    <div class="stat-card">
+                        <span class="text-2xl md:text-3xl font-bold text-primary-light">300+</span>
+                        <span class="text-xs text-gray-400 mt-1">DSA Problems</span>
                     </div>
-                    <p class="text-muted">Implementing CI/CD pipelines, containerization with Docker, and cloud deployment on Azure, ensuring high availability and scalability of applications.</p>
-                </div>
-            </div>
-
-            <!-- Database Architecture -->
-            <div class="col-md-4">
-                <div class="skill-card p-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="fas fa-database fa-2x me-3"></i>
-                        <h4 class="mb-0">Database Architecture</h4>
+                    <div class="stat-card">
+                        <span class="text-2xl md:text-3xl font-bold text-primary-light">3.48</span>
+                        <span class="text-xs text-gray-400 mt-1">GPA (Excellent)</span>
                     </div>
-                    <p class="text-muted">Designing high-performance database solutions with SQL Server, implementing complex data models, optimization strategies, and Entity Framework Core for efficient data access.</p>
-                </div>
-            </div>
-
-            <!-- Modern Frontend Solutions -->
-            <div class="col-md-4">
-                <div class="skill-card p-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="fas fa-layer-group fa-2x me-3"></i>
-                        <h4 class="mb-0">Frontend Architecture</h4>
+                    <div class="stat-card">
+                        <span class="text-2xl md:text-3xl font-bold text-primary-light">2+</span>
+                        <span class="text-xs text-gray-400 mt-1">Major Projects</span>
                     </div>
-                    <p class="text-muted">Developing responsive SPAs using modern JavaScript frameworks, implementing state management, and ensuring cross-browser compatibility with optimal performance.</p>
-                </div>
-            </div>
-
-            <!-- Technical Consultation -->
-            <div class="col-md-4">
-                <div class="skill-card p-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="fas fa-lightbulb fa-2x me-3"></i>
-                        <h4 class="mb-0">Technical Consultation</h4>
+                    <div class="stat-card">
+                        <span class="text-2xl md:text-3xl font-bold text-primary-light">20+</span>
+                        <span class="text-xs text-gray-400 mt-1">Features Built</span>
                     </div>
-                    <p class="text-muted">Providing expert guidance on architecture decisions, technology stack selection, and best practices for building scalable .NET applications.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-5">
-      <div class="container">
-        <h2 class="section-header h3 mb-5">Technical Arsenal</h2>
-        <div class="row g-4">
-            <div class="col-md-4">
-                <div class="skill-card p-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="fas fa-server fa-2x me-3"></i>
-                        <h4 class="mb-0">Backend Development</h4>
-                    </div>
-                    <div class="d-flex flex-wrap">
-                        <span class="badge bg-dark m-1">C#</span>
-                        <span class="badge bg-dark m-1">ASP.NET Core</span>
-                        <span class="badge bg-dark m-1">Web API</span>
-                        <span class="badge bg-dark m-1">Entity Framework</span>
-                    </div>
-                </div>
+    <!-- ═══════════════ SKILLS ═══════════════ -->
+    <section id="skills" class="py-24 relative scroll-mt-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center gap-3 mb-10 reveal">
+                <div class="w-1 h-8 bg-primary rounded-full"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Technical Skills</h2>
             </div>
-            <div class="col-md-4">
-                <div class="skill-card p-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="fas fa-paint-brush fa-2x me-3"></i>
-                        <h4 class="mb-0">Frontend Development</h4>
-                    </div>
-                    <div class="d-flex flex-wrap">
-                        <span class="badge bg-dark m-1">JavaScript</span>
-                        <span class="badge bg-dark m-1">Bootstrap</span>
-                        <span class="badge bg-dark m-1">CSS3</span>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="skill-card p-4">
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="fas fa-database fa-2x me-3"></i>
-                        <h4 class="mb-0">Database & DevOps</h4>
-                    </div>
-                    <div class="d-flex flex-wrap">
-                        <span class="badge bg-dark m-1">SQL Server</span>
-                        <span class="badge bg-dark m-1">Docker</span>
-                        <span class="badge bg-dark m-1">Git</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-      </div>
-    </section>
 
-    <!-- Project Section -->
-    <section id="projects" class="py-5">
-      <div class="container">
-        <h2 class="section-header h3 mb-5">Project Gallery</h2>
-        <div class="row g-4">
-            <div class="col-md-6">
-                <div class="project-card">
-                    <img src="assets/imgs/projects/event_management_project.png" class="w-100" alt="Social Network Project">
-                    <div class="p-4">
-                        <h4>Event Management Project</h4>
-                        <p>enabling users to create, manage, and track events with features</p>
-                        <div class="d-flex flex-wrap mb-3">
-                            <span class="badge me-2 mb-2">HTML&CSS</span>
-                            <span class="badge me-2 mb-2">JS</span>
-                            <span class="badge me-2 mb-2">Bootstrap</span>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Backend -->
+                <div class="skill-card reveal">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                            <i class="fas fa-server text-blue-400"></i>
                         </div>
-                        <a href="https://github.com/MohamedHassan2004/Event-Management-Website" class="btn project-btn" target="_blank">
-                            <i class="fab fa-github me-2"></i>View Project
+                        <h3 class="text-lg font-semibold text-white">Backend</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge">C#</span>
+                        <span class="tech-badge">ASP.NET Core</span>
+                        <span class="tech-badge">Web API</span>
+                        <span class="tech-badge">MVC</span>
+                        <span class="tech-badge">Entity Framework</span>
+                    </div>
+                </div>
+
+                <!-- Architecture -->
+                <div class="skill-card reveal">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-lg bg-purple-500/10 flex items-center justify-center">
+                            <i class="fas fa-cubes text-purple-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Architecture</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge">Clean Architecture</span>
+                        <span class="tech-badge">N-Tier</span>
+                        <span class="tech-badge">SOLID</span>
+                        <span class="tech-badge">Repository Pattern</span>
+                    </div>
+                </div>
+
+                <!-- Security & Real-Time -->
+                <div class="skill-card reveal">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center">
+                            <i class="fas fa-shield-alt text-red-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Security & Real-Time</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge">JWT</span>
+                        <span class="tech-badge">ASP.NET Identity</span>
+                        <span class="tech-badge">SignalR</span>
+                        <span class="tech-badge">WebSockets</span>
+                    </div>
+                </div>
+
+                <!-- Database -->
+                <div class="skill-card reveal">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-lg bg-yellow-500/10 flex items-center justify-center">
+                            <i class="fas fa-database text-yellow-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Database</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge">SQL Server</span>
+                        <span class="tech-badge">PostgreSQL</span>
+                        <span class="tech-badge">LINQ</span>
+                    </div>
+                </div>
+
+                <!-- Tools -->
+                <div class="skill-card reveal">
+                    <div class="flex items-center gap-3 mb-5">
+                        <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center">
+                            <i class="fas fa-tools text-green-400"></i>
+                        </div>
+                        <h3 class="text-lg font-semibold text-white">Tools</h3>
+                    </div>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="tech-badge">Git</span>
+                        <span class="tech-badge">GitHub</span>
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">Postman</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ EXPERIENCE ═══════════════ -->
+    <section id="experience" class="py-24 relative scroll-mt-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex items-center gap-3 mb-10 reveal">
+                <div class="w-1 h-8 bg-primary rounded-full"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Experience</h2>
+            </div>
+
+            <div class="glass-card rounded-2xl p-8 md:p-10 reveal">
+                <div class="flex flex-col md:flex-row md:items-start md:justify-between mb-6">
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-1">.NET Development Trainee</h3>
+                        <p class="text-primary-light font-medium">Digital Egypt Pioneers Initiative (DEPI)</p>
+                    </div>
+                    <span class="text-sm text-gray-400 mt-2 md:mt-0 bg-primary/10 px-3 py-1 rounded-full border border-primary/20 whitespace-nowrap">2025</span>
+                </div>
+
+                <ul class="space-y-3">
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-chevron-right text-primary-light text-xs mt-1.5 flex-shrink-0"></i>
+                        <span class="text-gray-300">Built scalable RESTful APIs using ASP.NET Core with proper layered architecture</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-chevron-right text-primary-light text-xs mt-1.5 flex-shrink-0"></i>
+                        <span class="text-gray-300">Implemented secure authentication systems using JWT tokens and ASP.NET Identity</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-chevron-right text-primary-light text-xs mt-1.5 flex-shrink-0"></i>
+                        <span class="text-gray-300">Collaborated in team environments using Git workflows, branching strategies, and code reviews</span>
+                    </li>
+                    <li class="flex items-start gap-3">
+                        <i class="fas fa-chevron-right text-primary-light text-xs mt-1.5 flex-shrink-0"></i>
+                        <span class="text-gray-300">Applied clean architecture principles and design patterns across real-world projects</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ PROJECTS ═══════════════ -->
+    <section id="projects" class="py-24 relative scroll-mt-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex items-center gap-3 mb-4 reveal">
+                <div class="w-1 h-8 bg-primary rounded-full"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Featured Projects</h2>
+            </div>
+            <p class="text-gray-400 mb-10 ml-5 reveal">Real-world applications built with production-grade standards.</p>
+
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Socialify -->
+                <div class="project-card reveal">
+                    <div class="overflow-hidden rounded-t-xl relative group">
+                        <img src="assets/imgs/projects/socialify.png" alt="Socialify" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <a href="https://github.com/MohamedHassan2004/Socialify" target="_blank" class="absolute top-3 right-3 w-10 h-10 rounded-lg bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white hover:bg-primary/70 hover:border-primary/50 transition-all duration-300">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                    </div>
+                    <div class="p-8 pt-5">
+                        <h3 class="text-xl font-bold text-white mb-2">Socialify</h3>
+                        <p class="text-sm text-primary-light font-medium mb-3">Social Media Platform — .NET Core MVC, Clean Architecture</p>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-5">
+                            A full-featured social media platform supporting 20+ core user interactions including posting, commenting, reactions, and friend management — engineered with Clean Architecture.
+                        </p>
+
+                        <!-- Achievements -->
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start gap-2 text-sm text-gray-300">
+                                <i class="fas fa-check text-green-400 text-xs mt-1 flex-shrink-0"></i>
+                                20+ core features with full CRUD operations and friend management
+                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-300">
+                                <i class="fas fa-check text-green-400 text-xs mt-1 flex-shrink-0"></i>
+                                Global exception handling and structured logging with Serilog
+                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-300">
+                                <i class="fas fa-check text-green-400 text-xs mt-1 flex-shrink-0"></i>
+                                Optimized database performance with custom pagination and filtering
+                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-300">
+                                <i class="fas fa-check text-green-400 text-xs mt-1 flex-shrink-0"></i>
+                                ~30% mapping performance boost by replacing reflection with Mapperly
+                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-300">
+                                <i class="fas fa-check text-green-400 text-xs mt-1 flex-shrink-0"></i>
+                                Secured endpoints using ASP.NET Identity with auth workflows
+                            </li>
+                        </ul>
+
+                        <!-- Tech Stack -->
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge-sm">ASP.NET Core MVC</span>
+                            <span class="tech-badge-sm">C#</span>
+                            <span class="tech-badge-sm">SQL Server</span>
+                            <span class="tech-badge-sm">EF Core</span>
+                            <span class="tech-badge-sm">SignalR</span>
+                            <span class="tech-badge-sm">MediatR</span>
+                            <span class="tech-badge-sm">Serilog</span>
+                            <span class="tech-badge-sm">Mapperly</span>
+                            <span class="tech-badge-sm">Clean Architecture</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Marketplace -->
+                <div class="project-card reveal">
+                    <div class="overflow-hidden rounded-t-xl relative group">
+                        <img src="assets/imgs/projects/marketplace.png" alt="Marketplace" class="w-full h-64 object-cover group-hover:scale-105 transition-transform duration-500">
+                        <a href="https://github.com/MohamedHassan2004/Marketplace" target="_blank" class="absolute top-3 right-3 w-10 h-10 rounded-lg bg-black/50 backdrop-blur-sm border border-white/10 flex items-center justify-center text-white hover:bg-primary/70 hover:border-primary/50 transition-all duration-300">
+                            <i class="fab fa-github text-lg"></i>
+                        </a>
+                    </div>
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-white mb-2">Marketplace</h3>
+                        <p class="text-sm text-accent-light font-medium mb-3">E-Commerce Backend — .NET Core Web API, N-Tier Architecture</p>
+                        <p class="text-gray-400 text-sm leading-relaxed mb-5">
+                            A multi-role marketplace backend supporting vendor and customer workflows with product management, order processing, and real-time notifications.
+                        </p>
+
+                        <!-- Achievements -->
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start gap-2 text-sm text-gray-300">
+                                <i class="fas fa-check text-green-400 text-xs mt-1 flex-shrink-0"></i>
+                                Designed multi-role system supporting vendors and customers
+                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-300">
+                                <i class="fas fa-check text-green-400 text-xs mt-1 flex-shrink-0"></i>
+                                Product management, cart, and order processing with secure JWT auth
+                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-300">
+                                <i class="fas fa-check text-green-400 text-xs mt-1 flex-shrink-0"></i>
+                                Real-time notifications via WebSockets for order updates
+                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-300">
+                                <i class="fas fa-check text-green-400 text-xs mt-1 flex-shrink-0"></i>
+                                Layered architecture with repository pattern for scalable code structure
+                            </li>
+                            <li class="flex items-start gap-2 text-sm text-gray-300">
+                                <i class="fas fa-check text-green-400 text-xs mt-1 flex-shrink-0"></i>
+                                Implemented policy-based permission authorization for fine-grained access control
+                            </li>
+                        </ul>
+
+                        <!-- Tech Stack -->
+                        <div class="flex flex-wrap gap-2">
+                            <span class="tech-badge-sm">ASP.NET Core Web API</span>
+                            <span class="tech-badge-sm">EF Core</span>
+                            <span class="tech-badge-sm">SQL Server</span>
+                            <span class="tech-badge-sm">JWT</span>
+                            <span class="tech-badge-sm">WebSockets</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ PROBLEM SOLVING ═══════════════ -->
+    <section id="problem-solving" class="py-24 relative scroll-mt-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex items-center gap-3 mb-10 reveal">
+                <div class="w-1 h-8 bg-primary rounded-full"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Problem Solving</h2>
+            </div>
+
+            <div class="glass-card rounded-2xl p-8 md:p-10 text-center reveal">
+                <div class="w-20 h-20 rounded-2xl bg-primary/10 border border-primary/20 flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-brain text-primary-light text-3xl"></i>
+                </div>
+                <h3 class="text-4xl md:text-5xl font-extrabold text-white mb-3">300<span class="text-primary-light">+</span></h3>
+                <p class="text-lg text-gray-300 mb-8">Problems Solved Across Competitive Programming Platforms</p>
+
+                <div class="flex flex-wrap justify-center gap-4">
+                    <div class="platform-badge">
+                        <i class="fas fa-code text-yellow-400 mr-2"></i><a href="https://leetcode.com/u/Logan99x/">LeetCode</a>
+                    </div>
+                    <div class="platform-badge">
+                        <i class="fas fa-trophy text-blue-400 mr-2"></i>Codeforces
+                    </div>
+                    <div class="platform-badge">
+                        <i class="fas fa-fire text-red-400 mr-2"></i>Codewars
+                    </div>
+                </div>
+
+                <p class="text-gray-400 text-sm mt-8 max-w-lg mx-auto">
+                    Strong algorithmic foundation covering data structures, dynamic programming, graph theory, and optimization techniques.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════ EDUCATION ═══════════════ -->
+    <section id="education" class="py-24 relative scroll-mt-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex items-center gap-3 mb-10 reveal">
+                <div class="w-1 h-8 bg-primary rounded-full"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Education & Certifications</h2>
+            </div>
+
+            <!-- Education Card -->
+            <div class="glass-card rounded-2xl p-8 mb-6 reveal">
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between">
+                    <div class="flex items-center gap-4">
+                        <div class="w-14 h-14 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                            <img src="assets/imgs/logos/capital-uni-logo.png" alt="Capital University" class="w-10 h-10 object-contain">
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-bold text-white">Computer Science & Artificial Intelligence</h3>
+                            <p class="text-gray-400 text-sm">Helwan University (now Capital University) — Faculty of Computers & AI</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-3 mt-4 md:mt-0">
+                        <span class="text-sm text-gray-400 bg-primary/10 px-3 py-1 rounded-full border border-primary/20">2022 – 2026</span>
+                        <span class="text-sm text-primary-light bg-primary/10 px-3 py-1 rounded-full border border-primary/20 font-semibold">GPA: 3.48</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Certifications Grid -->
+            <div class="grid md:grid-cols-2 gap-6">
+                <!-- DEPI -->
+                <div class="glass-card rounded-2xl p-6 reveal">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                            <img src="assets/imgs/logos/DEPI logo.png" alt="DEPI" class="w-8 h-8 object-contain">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white text-sm">FullStack .NET Development</h4>
+                            <p class="text-gray-400 text-xs">Digital Egypt Pioneers Initiative</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Intensive training in .NET technologies with hands-on projects and industry best practices.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs text-gray-500">2025</span>
+                        <a href="assets/docs/DEPI.pdf" target="_blank" class="text-xs text-primary-light hover:text-primary font-medium transition-colors">
+                            View Certificate <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- McKinsey -->
+                <div class="glass-card rounded-2xl p-6 reveal">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                            <img src="assets/imgs/logos/Mckinsey logo.png" alt="McKinsey" class="w-8 h-8 object-contain">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white text-sm">McKinsey Forward</h4>
+                            <p class="text-gray-400 text-xs">McKinsey & Company</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Graduate of McKinsey Forward — trained in adaptability, problem solving, and communication.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs text-gray-500">2025</span>
+                        <a href="assets/docs/McKinseyForward.pdf" target="_blank" class="text-xs text-primary-light hover:text-primary font-medium transition-colors">
+                            View Certificate <i class="fas fa-external-link-alt ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- ECPC -->
+                <div class="glass-card rounded-2xl p-6 reveal">
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-primary/10 border border-primary/20 flex items-center justify-center flex-shrink-0 overflow-hidden">
+                            <img src="assets/imgs/logos/ECPC logo.png" alt="ECPC" class="w-8 h-8 object-contain">
+                        </div>
+                        <div>
+                            <h4 class="font-semibold text-white text-sm">ECPC Participant</h4>
+                            <p class="text-gray-400 text-xs">Egypt Competitive Programming Contest</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-400 text-sm mb-4">Competed in ECPC, solving complex algorithmic problems under time constraints.</p>
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs text-gray-500">2024</span>
+                        <a href="assets/docs/2025-ECPCQDAYFIVE2024-Mohamed Hassan-PLACE.pdf" target="_blank" class="text-xs text-primary-light hover:text-primary font-medium transition-colors">
+                            View Certificate <i class="fas fa-external-link-alt ml-1"></i>
                         </a>
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
-                <div class="project-card">
-                    <img src="assets/imgs/projects/social_networking_project.png" class="w-100" alt="Social Network Project">
-                    <div class="p-4">
-                        <h4>Social Network Platform</h4>
-                        <p>Facebook-like platform with user profiles and post sharing</p>
-                        <div class="d-flex flex-wrap mb-3">
-                            <span class="badge me-2 mb-2">HTML&CSS</span>
-                            <span class="badge me-2 mb-2">JS</span>
-                            <span class="badge me-2 mb-2">Bootstrap</span>
-                            <span class="badge me-2 mb-2">PHP</span>
-                            <span class="badge me-2 mb-2">MySQL</span>
-                        </div>
-                        <a href="https://github.com/MohamedHassan2004/Social-Networking" class="btn project-btn" target="_blank">
-                            <i class="fab fa-github me-2"></i>View Project
-                        </a>
-                    </div>
-                </div>
-            </div>
         </div>
-      </div>
     </section>
-        
-    <!-- Education & Certificates Section -->
-    <section id="education" class="container py-5">
-        <h2 class="section-header h3 mb-5">Education & Certifications</h2>
-        
-        <!-- Education -->
-        <div class="row mb-5">
-            <div class="col-12">
-                <h3 class="h4 mb-4">Education</h3>
-                <div class="skill-card p-4">
-                    <div class="d-flex align-items-center justify-content-between">
-                        <div class="d-flex align-items-center">
-                            <img src="assets/imgs/logos/HU logo.png" alt="Helwan University" class="me-2 logo">
-                            <div>
-                                <h4 class="h5 mb-0">Bachelor of Computer Science</h4>
-                                <p class="text-muted mb-0">Faculty of Computer Science - Helwan University, Egypt</p>
-                            </div>
-                        </div>
-                        <span class="badge bg-dark">2022 - 2026</span>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <!-- Certificates -->
-        <div class="row">
-            <div class="col-12">
-                <h3 class="h4 mb-4">Certifications</h3>
-                <div class="row g-4">
-                    <!-- Certificate Card -->
-                    <div class="col-md-6">
-                        <div class="skill-card p-4 h-100">
-                            <div class="certificate-content">
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <div class="d-flex align-items-center">
-                                        <img src="assets/imgs/logos/DEPI logo.png" alt="DEPI" class="logo me-3">
-                                        <div>
-                                            <h5 class="mb-1">.NET FullStack Development</h5>
-                                            <p class="text-muted mb-0">Digital Egypt Pioneers Initiative (DEPI)</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="certificate-details">
-                                    <p class="text-muted mb-3">Intensive training program covering .NET Technologies with hands-on projects and industry best practices</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge bg-dark">2025</span>
-                                        <a href="assets/docs/DEPI.pdf" class="btn btn-sm certificate-btn" target="_blank">
-                                            <i class="fas fa-external-link-alt me-2"></i>View Certificate
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+    <!-- ═══════════════ CONTACT ═══════════════ -->
+    <section id="contact" class="py-24 relative scroll-mt-20">
+        <div class="max-w-4xl mx-auto px-6">
+            <div class="flex items-center gap-3 mb-4 reveal">
+                <div class="w-1 h-8 bg-primary rounded-full"></div>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Get In Touch</h2>
+            </div>
+            <p class="text-gray-400 mb-10 ml-5 reveal">Have a project in mind or want to connect? Let's talk.</p>
+
+            <div class="grid md:grid-cols-5 gap-8">
+                <!-- Contact Info -->
+                <div class="md:col-span-2 space-y-4 reveal">
+                    <a href="mailto:mohamed.hassan.2004@outlook.com" class="contact-link-card">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <i class="fas fa-envelope text-primary-light"></i>
                         </div>
-                    </div>
-                    <!-- Certificate Card -->
-                    <div class="col-md-6">
-                        <div class="skill-card p-4 h-100">
-                            <div class="certificate-content">
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <div class="d-flex align-items-center">
-                                        <img src="assets/imgs/logos/Mckinsey logo.png" alt="McKinsey" class="logo me-3">
-                                        <div>
-                                            <h5 class="mb-1">McKinsey Forward</h5>
-                                            <p class="text-muted mb-0">McKinsey</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="certificate-details">
-                                    <p class="text-muted mb-3">McKinsey Forward Program graduate with training in adaptability, problem solving, communication, and relationship building.</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge bg-dark">2025</span>
-                                        <a href="assets/docs/McKinseyForward.pdf" class="btn btn-sm certificate-btn" target="_blank">
-                                            <i class="fas fa-external-link-alt me-2"></i>View Certificate
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div>
+                            <p class="text-xs text-gray-400">Email</p>
+                            <p class="text-sm text-white font-medium">mohamed.hassan.2004@outlook.com</p>
                         </div>
-                    </div>
-                    <!-- Certificate Card -->
-                    <div class="col-md-6">
-                        <div class="skill-card p-4 h-100">
-                            <div class="certificate-content">
-                                <div class="d-flex align-items-center justify-content-between mb-2">
-                                    <div class="d-flex align-items-center">
-                                        <img src="assets/imgs/logos/ECPC logo.png" alt="ECPC" class="logo me-3">
-                                        <div>
-                                            <h5 class="mb-1">ECPC</h5>
-                                            <p class="text-muted mb-0">Egypt Competitive Programming Contest (ECPC)</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="certificate-details">
-                                    <p class="text-muted mb-3">Participated in ECPC, solving complex computational problems under time constraints</p>
-                                    <div class="d-flex justify-content-between align-items-center">
-                                        <span class="badge bg-dark">2024</span>
-                                        <a href="assets/docs/2025-ECPCQDAYFIVE2024-Mohamed Hassan-PLACE.pdf" class="btn btn-sm certificate-btn" target="_blank">
-                                            <i class="fas fa-external-link-alt me-2"></i>View Certificate
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
+                    </a>
+
+                    <a href="https://github.com/MohamedHassan2004" target="_blank" class="contact-link-card">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <i class="fab fa-github text-primary-light"></i>
                         </div>
-                    </div>
+                        <div>
+                            <p class="text-xs text-gray-400">GitHub</p>
+                            <p class="text-sm text-white font-medium">MohamedHassan2004</p>
+                        </div>
+                    </a>
+
+                    <a href="https://linkedin.com/in/mohamed-hassan2004" target="_blank" class="contact-link-card">
+                        <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                            <i class="fab fa-linkedin text-primary-light"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-400">LinkedIn</p>
+                            <p class="text-sm text-white font-medium">mohamed-hassan2004</p>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="md:col-span-3 reveal">
+                    <form action="https://api.web3forms.com/submit" method="POST" class="glass-card rounded-2xl p-6 md:p-8">
+                        <input type="hidden" name="access_key" value="00b6d80c-03e3-435c-a662-6573347071cb">
+
+                        <div class="mb-5">
+                            <label for="name" class="block text-sm text-gray-400 mb-2">Name</label>
+                            <input type="text" id="name" name="name" required placeholder="Your name"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all duration-300">
+                        </div>
+
+                        <div class="mb-5">
+                            <label for="email" class="block text-sm text-gray-400 mb-2">Email</label>
+                            <input type="email" id="email" name="email" required placeholder="you@email.com"
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all duration-300">
+                        </div>
+
+                        <div class="mb-5">
+                            <label for="message" class="block text-sm text-gray-400 mb-2">Message</label>
+                            <textarea id="message" name="message" rows="4" required placeholder="Tell me about your project..."
+                                class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm placeholder-gray-500 focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/20 transition-all duration-300 resize-none"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn-primary w-full justify-center">
+                            <i class="fas fa-paper-plane mr-2"></i>Send Message
+                        </button>
+                    </form>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section py-5">
-      <div class="container">
-        <h2 class="section-header h3 mb-5">Get In Touch</h2>
-            <div class="row d-flex justify-content-center">
-              <!-- vector -->
-              <div class="col col-xl-4 col-md-5" id="col-contact">
-              </div>
-              <!-- form -->
-              <div class="col-md-8">
-                <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-
-                  <input type="hidden" name="access_key" value="00b6d80c-03e3-435c-a662-6573347071cb">
-                
-                  <div class="mb-4">
-                      <input type="text" class="form-control" type="text" id="name-1" name="name" placeholder="Your Name" required>
-                  </div>
-                  <div class="mb-4">
-                      <input type="email" class="form-control" type="email" id="email-1" name="email" placeholder="Your Email" required>
-                  </div>
-                  <div class="mb-4">
-                    <textarea class="form-control" id="message-1" name="message" rows="5"
-                    placeholder="Message"></textarea>
-                  </div>
-                  <button type="submit" class="download-btn rounded-pill w-100">
-                      <i class="fas fa-paper-plane me-2"></i>Send Message
-                  </button>
-                </form>
+    <!-- ═══════════════ FOOTER ═══════════════ -->
+    <footer class="border-t border-white/5 py-8">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-gray-500 text-sm">&copy; <script>document.write(new Date().getFullYear())</script> Mohamed Hassan. Built with purpose.</p>
+                <div class="flex items-center gap-5">
+                    <a href="mailto:mohamed.hassan.2004@outlook.com" class="text-gray-500 hover:text-primary-light transition-colors text-sm">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                    <a href="https://github.com/MohamedHassan2004" target="_blank" class="text-gray-500 hover:text-primary-light transition-colors text-sm">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/mohamed-hassan2004" target="_blank" class="text-gray-500 hover:text-primary-light transition-colors text-sm">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
             </div>
-          </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container text-center">
-            <div class="d-flex justify-content-center gap-4 mb-3">
-                <a href="mailto:mohamed.hassan.2004@outlook.com" class="text-decoration-none">
-                    <i class="fas fa-envelope me-2"></i>Email
-                </a>
-                <a href="tel:+201123406076" class="text-decoration-none">
-                    <i class="fas fa-phone me-2"></i>Call
-                </a>
-            </div>
-            <p class="mb-0">&copy; <script>document.write(new Date().getFullYear())</script> Mohamed Hassan. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- JS -->
+    <script src="assets/js/main.js"></script>
 </body>
 </html>
